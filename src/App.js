@@ -1,25 +1,54 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
+import Login from './components/Login';
+import Application from './components/Application';
+import 'antd/dist/antd.css';
 import './App.css';
+import Header from './components/Header';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import Highlighter from './components/Highlighter';
+import { isAlreadyIn } from './redux/user/actions';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  
+  constructor(props){
+    super(props);
+    this.state = {
+      
+    }
+  }
+
+  componentDidMount() {
+    // authenticate token with server.
+    this.props.isAlreadyIn();
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        {this.props.isHighlight ? <Highlighter/> :""}
+        <div className="container">
+        <Switch>
+        
+        <Route exact path="/"> 
+          {!this.props.isLoggedIn ? <Login /> : <Redirect to="/add-post" />}
+        </Route>
+        <Route exact path="/add-post"> 
+          {this.props.isLoggedIn ? <Application /> : <Redirect to="/" />}
+        </Route>
+        
+        </Switch>
+        </div>
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  isLoggedIn: state.user.isLoggedIn,
+  isHighlight: state.highlight.isHighlight
+});
+
+export default connect(mapStateToProps, {isAlreadyIn})(App);
+
