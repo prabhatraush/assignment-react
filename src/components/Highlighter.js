@@ -13,14 +13,12 @@ function Highlighter(){
         //canvas.style.width = `${window.innerWidth}px`;
         //canvas.style.height = `${window.innerHeight}px`;
         //canvas.style.padding = "20px 10px";
-        // canvas.style.background = "#45002314";
+        canvas.style.background = "#45002314";
         canvas.style.position = "absolute"; 
-        // canvas.width = window.innerWidth;
-        // canvas.height = window.innerHeight;
-        canvas.width = window.innerWidth * 2;
-        canvas.height = window.innerHeight * 2;
-        canvas.style.width = `${window.innerWidth}px`;
-        canvas.style.height = `${window.innerHeight}px`;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        canvas.style.width = `${window.innerWidth/2}px`;
+        canvas.style.height = `${window.innerHeight/2}px`;
         canvas.style.zIndex = 1;
 
         const context = canvas.getContext("2d")

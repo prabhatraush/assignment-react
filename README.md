@@ -1,8 +1,13 @@
 # QUERY HIGHLIGHTER
+## Signup 
+- first signup user using below api  
+- http://mdbgqlserver.herokuapp.com/graphql
+
+![Demo Signup](/Capture.PNG)
 
 ## Login Page
 
-- a already hosted server is user to authenticate users. it will gives token after success. 
+- login user via create credentials to authenticate users. it will gives token after success. 
 - link: http://mdbgqlserver.herokuapp.com
 
 ## Aplication Page
