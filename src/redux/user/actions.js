@@ -2,12 +2,6 @@ import * as types from './types';
 import api from '../../utils/api';
 
 export const getLogin = (email, password) => dispatch => {
-        dispatch({
-            type: types.LOGIN_REQ,
-            payload: {
-                isLoggedIn : false
-            }
-        })
 
         console.log(email, password);
         const request = {
@@ -69,13 +63,6 @@ export const isAlreadyIn = () => (dispatch) =>{
             type: types.LOGIN_SUCCESS,
             payload: {
                 isLoggedIn : true
-            }
-        })
-    }else{
-        dispatch({
-            type: types.LOGIN_FAIL,
-            payload: {
-                isLoggedIn : false
             }
         })
     }

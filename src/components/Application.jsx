@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Input, InputNumber, Button, Divider, DatePicker } from 'antd';
+import { Form, Input, InputNumber, Button, Divider, DatePicker, Alert } from 'antd';
 import { connect } from 'react-redux';
 import {addForm} from '../redux/form/actions'
 
@@ -107,6 +107,7 @@ class Application extends Component {
                         Add 
                         </Button>
                     </Form.Item>
+                    {this.props.isAdded && <Alert message="Form Data Added" type="success" showIcon />}
                     </Form>
             </div>
             
@@ -114,7 +115,12 @@ class Application extends Component {
     }
 }
 
+const mapStateToProps = state => ({
+    isAdded: state.forms.isAdded
+  });
+
+
   export default connect(
-    '',
+    mapStateToProps,
     {addForm}
   )(Application);

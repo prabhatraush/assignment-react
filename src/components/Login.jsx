@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Form, Input, Button, Divider } from 'antd';
+import {Form, Input, Button, Divider, Alert } from 'antd';
 import { getLogin } from '../redux/user/actions';
 import { connect } from 'react-redux';
 
@@ -68,6 +68,7 @@ class Login extends Component {
                         Submit
                         </Button>
                     </Form.Item>
+                    {this.props.err && <Alert message="Incorect Credential" type="error" showIcon />}
                     </Form>
             </div>
             
@@ -76,7 +77,8 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-    isLoggedIn: state.user.isLoggedIn
+    isLoggedIn: state.user.isLoggedIn,
+    err: state.user.err
   });
 
 

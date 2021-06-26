@@ -2,7 +2,8 @@ import * as types from "./types";
 
 const initialState = {
     data : null,
-    isAdded: false
+    isAdded: false,
+    err: false,
   };
 
 export function reducer(state = initialState, action)
@@ -12,13 +13,17 @@ export function reducer(state = initialState, action)
         case types.ADD_FORM:
             return{
                 ...state,
-                data : action.payload
+                data : action.payload,
+                isAdded: true,
+                err: false
             };
         
         case types.ADD_FORM_ERROR:
         return{
             ...state,
-            data : null
+            data : null,
+            isAdded: false,
+            err: true
         };
         
         default:

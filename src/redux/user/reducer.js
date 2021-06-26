@@ -1,25 +1,21 @@
 import * as types from "./types";
 
 const initialState = {
-    isLoggedIn: false
+    isLoggedIn: false,
+    err: false
   };
 
 export function reducer(state = initialState, action)
 {
     switch(action.type)
     {
-        case types.LOGIN_REQ:
-            return{
-                ...state,
-                ...action.payload,
-                isLoggedIn: false,
-            };
         
         case types.LOGIN_SUCCESS:
             return{
                 ...state,
                 ...action.payload,
                 isLoggedIn: true,
+                err: false
             };
 
         case types.LOGIN_FAIL:
@@ -27,6 +23,7 @@ export function reducer(state = initialState, action)
                 ...state,
                 ...action.payload,
                 isLoggedIn: false,
+                err: true
             };
         
         case types.LOGOUT:
@@ -34,6 +31,7 @@ export function reducer(state = initialState, action)
             ...state,
             ...action.payload,
             isLoggedIn: false,
+            err: false
         };
         
         default:
