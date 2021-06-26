@@ -16,7 +16,7 @@
 
 ## Environment Varialbes 
 ```.env
-REACT_APP_DUMMY_URL=http://mdbgqlserver.herokuapp.com
+REACT_APP_DUMMY_URL=https://mdbgqlserver.herokuapp.com
 REACT_APP_DUMMY_URL_FORM=https://60d71061307c300017a5f60a.mockapi.io/api/v1
 
 ```
