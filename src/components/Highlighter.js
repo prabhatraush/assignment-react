@@ -13,10 +13,11 @@ function Highlighter(){
         //canvas.style.width = `${window.innerWidth}px`;
         //canvas.style.height = `${window.innerHeight}px`;
         //canvas.style.padding = "20px 10px";
-        canvas.style.background = "#45002314";
+        // canvas.style.background = "#45002314";
         canvas.style.position = "absolute"; 
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+        canvas.style.cursor = "text";
         canvas.style.width = `${window.innerWidth/2}px`;
         canvas.style.height = `${window.innerHeight/2}px`;
         canvas.style.zIndex = 1;
@@ -25,7 +26,7 @@ function Highlighter(){
         context.scale(2, 2);
         context.lineCap = "butt";
         context.strokeStyle = "#FFFF2E12";
-        context.lineWidth = 5;
+        context.lineWidth = 20;
         contextRef.current = context;
     },[])
 
