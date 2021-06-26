@@ -1,15 +1,16 @@
 # QUERY HIGHLIGHTER
 
 ## Login Page
-    - a already hosted server is user to authenticate users. it will gives token after success. 
-    - link: http://mdbgqlserver.herokuapp.com
+
+- a already hosted server is user to authenticate users. it will gives token after success. 
+- link: http://mdbgqlserver.herokuapp.com
 
 ## Aplication Page
-   - a dummy mock api for posting form data. 
-   - link: https://60d71061307c300017a5f60a.mockapi.io/api/v1
+- a dummy mock api for posting form data. 
+- link: https://60d71061307c300017a5f60a.mockapi.io/api/v1
 
 ## Highlighter 
- - enable the switch to highlight.
+- enable the switch to highlight.
 
 
 
